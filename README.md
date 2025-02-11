@@ -22,7 +22,10 @@ A Flutter widget package that provides customizable scrolling functionality desi
 - Interactive scroll bar that responds to touch/drag
 - Works with existing PageController instances
 
-![Page Scroller Demo](https://raw.githubusercontent.com/aPPbARRRR/page_scroller/main/example/demo.gif)
+<p float="left">
+  <img src="https://raw.githubusercontent.com/aPPbARRRR/page_scroller/main/example/demo.gif" width="45%" />
+  <img src="https://raw.githubusercontent.com/aPPbARRRR/page_scroller/main/example/demo_2.gif" width="45%" />
+</p>
 
 ## Getting started
 
