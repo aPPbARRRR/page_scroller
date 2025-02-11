@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:page_scroller/page_scroller.dart';
 
+import 'bar_child_widget.dart';
+
 void main() {
   runApp(const MyApp());
 }
@@ -54,7 +56,9 @@ class _ExampleState extends State<Example> {
               right: 0,
               child: HorizontalPageScroller(
                   height: 30,
-                  widgetWidth: MediaQuery.of(context).size.width - 100,
+                  widgetWidth: MediaQuery.of(context).size.width - 20,
+                  backgroundRailColor: Colors.pink[100]!,
+                  barChild: BarChildWidget(size: 50, color: Colors.pink),
                   numOfItems: _itemCount,
                   pageController: _pageController))
         ],
