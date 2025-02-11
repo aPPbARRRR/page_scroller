@@ -11,30 +11,89 @@ and the Flutter guide for
 [developing packages and plugins](https://flutter.dev/to/develop-packages).
 -->
 
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
+# page_scroller
 
-## Features
+A Flutter widget package that provides customizable scrolling functionality designed specifically for page-based widgets like PageView.
 
-TODO: List what your package can do. Maybe include images, gifs, or videos.
+- Horizontal and vertical scroll bars that can be optionally synced with PageViewController
+- Customizable bar colors, sizes, border radius, etc.
+- Support for custom bar widgets
+- Smooth animation with adjustable duration
+- Interactive scroll bar that responds to touch/drag
+- Works with existing PageController instances
+
+![Page Scroller Demo](https://raw.githubusercontent.com/aPPbARRRR/page_scroller/main/example/demo.gif)
 
 ## Getting started
 
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
+Add the package to your `pubspec.yaml`:
+
+```yaml
+dependencies:
+  page_scroller: ^0.0.1
+```
 
 ## Usage
 
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder.
+Here's a basic example using both horizontal and vertical scrollers:
 
 ```dart
-const like = 'sample';
+Stack(
+  children: [
+    PageView.builder(
+      itemCount: 5,
+      controller: pageController,
+      itemBuilder: (context, index) => Center(
+        child: Text('Page $index'),
+      ),
+    ),
+    VerticalPageScroller(
+      numOfItems: 5,
+      width: 20,
+      widgetHeight: MediaQuery.of(context).size.height,
+      pageController: pageController,
+    ),
+    Positioned(
+      bottom: 30,
+      right: 0,
+      child: HorizontalPageScroller(
+        height: 30,
+        widgetWidth: MediaQuery.of(context).size.width - 100,
+        numOfItems: 5,
+        pageController: pageController,
+      ),
+    ),
+  ],
+)
+```
+
+### Customization
+
+Both scrollers support various customization options:
+
+```dart
+HorizontalPageScroller(
+  height: 30,
+  widgetWidth: 300,
+  numOfItems: 5,
+  defaultBarColor: Colors.grey,
+  selectedBarColor: Colors.white,
+  backgroundRailColor: Colors.black54,
+  backgroundRailBorderRadius: 5,
+  barBorderRadius: 5,
+  initialSelectedItemIndex: 0,
+  barChild: YourCustomWidget(), // Optional custom bar widget
+  minBarWidth: 30,
+  barChildPadding: EdgeInsets.all(4),
+  scrollerMoveDuration: Duration(milliseconds: 100),
+  onTap: (index) => print('Tapped index: $index'),
+  onParentPageChanged: () => print('Page changed'),
+  pageController: pageController,
+)
 ```
 
 ## Additional information
 
-TODO: Tell users more about the package: where to find more information, how to
-contribute to the package, how to file issues, what response they can expect
-from the package authors, and more.
-# page_scroller
+- Package homepage: https://github.com/aPPbARRRR/page_scroller
+- Bug reports and feature requests are welcome in the [issue tracker](https://github.com/aPPbARRRR/page_scroller/issues)
+- For detailed API documentation, visit the [API reference](https://pub.dev/documentation/page_scroller/latest/)
