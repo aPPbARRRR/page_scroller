@@ -98,5 +98,6 @@ HorizontalPageScroller(
 ## Additional information
 
 - Package homepage: https://github.com/aPPbARRRR/page_scroller
+- Package on pub.dev: https://pub.dev/packages/page_scroller
 - Bug reports and feature requests are welcome in the [issue tracker](https://github.com/aPPbARRRR/page_scroller/issues)
 - For detailed API documentation, visit the [API reference](https://pub.dev/documentation/page_scroller/latest/)
